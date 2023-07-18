@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 HERE = pathlib.Path(__file__).parent
 
-VERSION = '0.0.1'  # Muy importante, deberéis ir cambiando la versión de vuestra librería según incluyáis nuevas funcionalidades
+VERSION = '0.0.1a'  # Muy importante, deberéis ir cambiando la versión de vuestra librería según incluyáis nuevas funcionalidades
 PACKAGE_NAME = 'ecomaps'  # Debe coincidir con el nombre de la carpeta
 AUTHOR = 'David Luna'  # Modificar con vuestros datos
 AUTHOR_EMAIL = 'david.lunan@udea.edu.co'  # Modificar con vuestros datos
@@ -22,7 +22,8 @@ INSTALL_REQUIRES = [
     'scipy',
     'scikit-maad',
     'sklearn',
-    'matplotlib'
+    'matplotlib',
+    'mat73'
 ]
 
 setup(

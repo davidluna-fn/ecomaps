@@ -1,17 +1,16 @@
+import datetime
+import sys
+
+import numpy as np
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
-from mat73 import loadmat
-import indices
-import sys
-import numpy as np
 from scipy.interpolate import interp2d
+from matplotlib.patches import Rectangle
 from matplotlib.ticker import FixedLocator
 from sklearn.preprocessing import MinMaxScaler
-from matplotlib.patches import Rectangle
-import datetime
 
-
-sys.path.append('/home/david/Código/EAI-temporal-large-scale/src')
+from . import indices
+from mat73 import loadmat
 
 
 def getLongMatrix(paths, fs, nfft, temporal_bins, days):
