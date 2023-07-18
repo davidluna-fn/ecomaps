@@ -190,10 +190,10 @@ def beta(s, f, bio_band=(2000, 8000)):
     minf = bio_band[0]
     maxf = bio_band[1]
     s = s/np.amax(s)
-    s = 10*np.log10(s**2)
+    s = np.abs(10*np.log10(s**2))
     bioph = s[np.logical_and(f >= minf, f <= maxf), :]
     bioph_norm = bioph - np.amin(bioph, axis=0)
-    B = np.trapz(bioph_norm, axis=0)
+    B = 1 - np.sum(bioph_norm, axis=0)
     return B
 
 
