@@ -11,7 +11,7 @@ from scipy.stats import entropy
 
 def spectral_centroid_spread(s, freq):
     m = np.repeat(freq.reshape(len(freq), 1), s.shape[1], 1)
-    C = np.sum(s*m, axis=0) / np.sum(s, axis=0)
+    C = 1 - np.sum(s*m, axis=0) / np.sum(s, axis=0)
     k = m - np.repeat(C.reshape(1, len(C)), m.shape[0], 0)
     S = np.sum((k**2)*s, axis=0) / np.sum(s, axis=0)
     return C, S
